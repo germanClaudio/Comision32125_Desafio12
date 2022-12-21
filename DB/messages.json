@@ -128,31 +128,5 @@
     "text": "Chevechaaaaa",
     "fyh": "11/11/2022, 21:09:43",
     "id": 10
-  },
-  {
-    "author": {
-      "email": "",
-      "nombre": "",
-      "apellido": "",
-      "edad": "",
-      "alias": "",
-      "avatar": ""
-    },
-    "text": "",
-    "fyh": "17/11/2022, 14:37:46",
-    "id": 11
-  },
-  {
-    "author": {
-      "email": "",
-      "nombre": "",
-      "apellido": "",
-      "edad": "",
-      "alias": "",
-      "avatar": ""
-    },
-    "text": "",
-    "fyh": "22/11/2022, 11:16:10",
-    "id": 12
   }
 ]
