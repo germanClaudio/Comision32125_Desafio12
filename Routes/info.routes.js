@@ -7,6 +7,10 @@ const options = require('../options/config')
 const { fork } = require('child_process')
 const path = require('path')
 
+const { checkAtuhentication } = require('../middlewares/chekAuthentication')
+const Products = require('../daos/productos/ProductosDaoArchivo') //'../services/productos.js'
+const products = new Products()
+
 //---------------- Process object -----------------
 const args = parseArgs(process.argv.slice(2))
 const host = options.options.HOST
@@ -56,6 +60,14 @@ infoRouter.get('/api/randoms', (req, res) => {
         //  console.log(`What you are trying to do... kill your CPU by computing ${cant} randon numbers?`)
          res.json({ Mensaje: `What you are trying to do... kill your CPU by computing ${cant} randon numbers?`})
     }
+})
+
+infoRouter.get('/', checkAtuhentication, (req, res) => {
+    
+    // const productos = products.getAllProducts()//getProducts()
+    // if(productos.error) res.status(200).json({msg: 'No hay productos cargados'}) 
+    res.render('index.ejs' , { username: req.session.user, visitas: req.session.visits })
+    //res.status(200).json(productos)
 })
 
 module.exports = {
