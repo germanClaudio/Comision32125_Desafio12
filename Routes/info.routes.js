@@ -37,7 +37,7 @@ infoRouter.get('/info', (req, res) => {
 
 infoRouter.get('/api/randoms', (req, res) => {
 
-    const maxCount = 1000000 // esta valor tarda 5 minutos aprox. en mi maquina
+    const maxCount = 20000 // esta valor tarda 5 minutos aprox. en mi maquina
     const cant = parseInt(req.query.cant) || maxCount
 
     //console.log('Console de cant: ', cant)
