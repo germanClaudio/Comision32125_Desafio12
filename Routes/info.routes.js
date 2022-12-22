@@ -8,8 +8,6 @@ const { fork } = require('child_process')
 const path = require('path')
 
 const { checkAtuhentication } = require('../middlewares/chekAuthentication')
-const Products = require('../daos/productos/ProductosDaoArchivo') //'../services/productos.js'
-const products = new Products()
 
 //---------------- Process object -----------------
 const args = parseArgs(process.argv.slice(2))
@@ -62,8 +60,8 @@ infoRouter.get('/api/randoms', (req, res) => {
     }
 })
 
-infoRouter.get('/', checkAtuhentication, (req, res) => {
-    
+infoRouter.get('/', checkAtuhentication, express-session, (req, res) => {
+    console.log('username: ', req.session )
     // const productos = products.getAllProducts()//getProducts()
     // if(productos.error) res.status(200).json({msg: 'No hay productos cargados'}) 
     res.render('index.ejs' , { username: req.session.user, visitas: req.session.visits })

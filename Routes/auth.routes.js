@@ -77,6 +77,7 @@ authRouter.get('/historial', async (req, res) => {
 authRouter.get('/index', async (req, res) => {
     try {
         //return res.render('index')
+        console.log('ususrio session: ', req.session)
         return res.render('index.ejs' , { username: req.session.user, visitas: req.session.visits })
     } catch (error) {
         res.status(500).send(error)
