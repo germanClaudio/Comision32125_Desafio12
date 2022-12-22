@@ -60,7 +60,7 @@ infoRouter.get('/api/randoms', (req, res) => {
     }
 })
 
-infoRouter.get('/', checkAtuhentication, express-session, (req, res) => {
+infoRouter.get('/', checkAtuhentication, (req, res) => {
     console.log('username: ', req.session )
     // const productos = products.getAllProducts()//getProducts()
     // if(productos.error) res.status(200).json({msg: 'No hay productos cargados'}) 
